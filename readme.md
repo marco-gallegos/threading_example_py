@@ -30,7 +30,27 @@ Alternativas y soluciones
 - r5 5500 cpu
 - ubuntu 24.04
 - 64 gb RAM
-- python 3.12.
+- python 3.12.3 (latest on repos at the momemnt)
 - python 3.13.0
+
+### results
+
+#### python 3.12.3
+
+- single: 4.00s
+- threads: 3.96s
+- process: 0.67s
+
+#### 3.13.0 (GIL)
+
+- single: 3.28s
+- threads: 3.28s
+- process: 0.55s
+
+#### 3.13.0 (No GIL)
+
+- single: 4.43s
+- threads: 0.71s
+- process: 0.75s
 
 ![execution results](./gil_python_execution.png)
