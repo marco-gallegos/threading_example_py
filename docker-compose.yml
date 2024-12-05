@@ -1,0 +1,21 @@
+services:
+  ubuntu_python:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ubuntu_24_04
+    #deploy:
+    #  resources:
+    #    limits:
+    #      cpus: "1.0"
+    #      memory: 512M
+    #    reservations:
+    #      cpus: "0.25"
+    #      memory: 128M
+    cpuset: "1"
+    cpus: "1.0" # Limita el contenedor a un solo núcleo de CPU
+    mem_limit: 512m # Opcional: Limitar la memoria a 512 MB
+    stdin_open: true # Mantener el stdin abierto
+    tty: true # Habilitar la pseudo-TTY
+    volumes:
+      - .:/app
